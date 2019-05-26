@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Running Mode - Macro Dash</title>
+  <meta name="description" content="Macro Dash">
+  <meta name="theme-color" content="#3f75ff">
+  <link rel="icon" type="image/png" sizes="undefinedxundefined" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="undefinedxundefined" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+  <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+  <link rel="stylesheet" href="assets/css/smoothproducts.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white shadow clean-navbar" style="background: #eee !important;">
+    <div class="container"><a class="navbar-brand logo" href="index.html"><img src="assets/img/page-logo.png" height="50" alt="Page Logo"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+          navigation</span><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navcol-1" style="padding: 0rem 2rem;">
+        <ul class="nav navbar-nav text-center">
+          <li class="nav-item text-center active" role="presentation"><a class="nav-link" href="index.html">&#8592; Return</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="page landing-page">
+    <section class="go-section clean-block clean-hero" style="background-image: url(&quot;assets/img/main_background2.jpg&quot;);color: rgba(125, 125, 125, 0.6);">
+      <div class="text">
+        <h2>Time to Start that Long Road Ahead</h2>
+        <p>Start small and travel far one day at a time</p>
+        <select class="running-mode shadow-lg custom-select custom-select-lg" id="exercise-modes">
+            <optgroup label="--- General Excersises ---">
+            <option value="Standard Run">Standard Run</option>
+            <option value="Slim Joe Gains">Slim Joe Gains</option>
+            <option value="Catch that Thief!">Catch that Thief!</option>
+            <option value="The Battle of the Giants">The Battle of the Giants</option>
+            <option value="Stretch those Muscles!">Stretch those Muscles!</option>
+            <option value="Relax like it's a Sunday">Relax like it's a Sunday</option>
+            <option value="Go Hard like it's a Monday">Go Hard like it's a Monday</option>
+
+            <optgroup label="--- Coin Hunts (25 Coins) ---">
+            <option value="Cash Dash">Cash Dash</option>
+            <option value="Seaside Speed Runner">Seaside Speed Runner</option>
+            <option value="Assault on the Beachfront">Assault on the Beachfront</option>
+
+            <optgroup label="--- Coin Hunts (50 Coins) ---">
+            <option value="Nick those Stickers">Nick those Stickers</option>
+            <option value="Panic at the Beachside">Panic at the Beachside</option>
+
+            <optgroup label="--- Coin Hunts (100 Coins) ---">
+            <option value="Sunset Speedster">Sunset Speedster</option>
+            <option value="Night of the Living Runners">Night of the Living Runners</option>
+            <option value="Speedy Gonzales">Speedy Gonzales</option>
+          </optgroup>
+        </select>
+
+        <a href="map.html">
+          <button class="go-btn btn btn-outline-light btn-lg pulse animated infinite" button id="show" type="button" style="margin: 25px 0px;">Let's Hit it!</button>
+        </a>
+
+        <p class="exercise-descriptor">What is my exercise?</p>
+
+        <div class="hidden">
+          <p class="Standard-Run">This mode is for the average user looking to go for a light run or walk whilst enjoying the afternoon.</p>
+          <p class="hidden-text Slim-Joe-Gains">This mode is a combination of both cardio and strength exercises. This is best for the typical user looking to get into exercising but doesn't know where to start.</p>
+          <p class="hidden-text Catch-that-Thief">Despite the name, you aren't actually catching anyone apart from that goal you want in life. This mode is best for those looking at improving their cardio.</p>
+          <p class="hidden-text The-Battle-of-the-Giants">If you are looking at getting into the more powerlifting exercises, this workout is best suited for you.</p>
+          <p class="hidden-text Stretch-those-Muscles">This exercise involves a lot of stretching. Consider putting this in your routine to prevent muscle injuries.</p>
+          <p class="hidden-text Relax-like-its-a-Sunday">If you want a small workout session, this exercise is best for you.</p>
+          <p class="hidden-text Go-hard-like-its-a-Monday">This exercise is not for the faint of heart. This routine will test your athleticism.</p>
+          <p class="hidden-text Cash-Dash">Your task is to get from Point A to Point B in the quickest time possible. You will have set break times during the event.</p>
+          <p class="hidden-text Seaside-Speed-Runner">This next challenge requires you to go to the Casuarina Beach and sprint as fast as you can to reach the edge of the beach. Be sure to pack some runners.</p>
+          <p class="hidden-text Assault-on-the-Beachfront">There is an all-out fight on the Casuarina Beach who is better than what. Teach those boasters who is boss.</p>
+          <p class="hidden-text Nick-those-Stickers">Someone in the Darwin city has placed a set of stickers that are waiting to be claimed. Find and scan these stickers and claim the rewards. Be sure to keep an eye out if you want these bonuses.</p>
+          <p class="hidden-text Panic-at-the-Beachside">There is a terror going on at Casuarina Beach. Go over there to find out what is going on. Be prepared to run.</p>
+          <p class="hidden-text Sunset-Speedster">There is nothing better than a nice light run on the Nightcliff Beach. Spend some time and claim some coins for your troubles.</p>
+          <p class="hidden-text Night-of-the-Living-Runners">This is it. Your entire life has been dedicated to being fit and healthy. You need to go to the mall to collect what you can. But be aware, this is a dangerous route to take.</p>
+          <p class="hidden-text Speedy-Gonzales">Usain Bolt has challenged you in the next Olympics event. Your task is to sprint as fast as you can and beat Bolt's record time.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+  <script src="assets/js/smoothproducts.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
