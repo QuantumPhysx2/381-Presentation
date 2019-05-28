@@ -2,12 +2,16 @@ var map, infoWindow, marker;
 
 function initMap() {
     // Google map settings
+    // MapTypeId = https://developers.google.com/maps/documentation/javascript/maptypes
     map = new google.maps.Map(document.querySelector("#map"), {
         center: {lat: -34.397, lng: 150.644},
-        zoom: 14,
-        gestureHandling: "greedy"
+        zoom: 20,
+        tilt: 45,
+        gestureHandling: "greedy",
+        heading: 90,
+        mapTypeId: "hybrid"
     })
-
+    
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(-34.397, 150.644),
         map: map,
@@ -48,6 +52,15 @@ function initMap() {
     }
 }
 
+function randomMarker(boundary) {
+    var latMin = boundary.getSouthWest().lat(),
+        latRange = boundary.getNorthEast().lat() - latMin,
+        lonMin = boundary.getSouthWest().lng(),
+        lonRange = boundary.getNorthEast().lng - lonMin;
+
+    return new google.maps.LatLng(latMin + (Math.random() * latRange), lonMin + (Math.random() * lonRange));
+}
+
 function setMarkerPosition(marker, position) {
     marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
 }
@@ -66,8 +79,8 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     var dLon = (lon2 - lon1).toRad();
     
     var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
     var dist = R * c;
     return dist;
 }
@@ -96,12 +109,13 @@ window.onload = function() {
     })
 
     navigator.geolocation.watchPosition(function(pos) {
+        // Updating innerHTML with current coordinates
         startPos = pos;
         document.querySelector("#current_lat").textContent = startPos.coords.latitude;
         document.querySelector("#current_lon").textContent = startPos.coords.longitude;
         
         // Calculate distance between original and current location
-        document.querySelector("#stat_distance").textContent = calculateDistance(startPos.coords.latitude, startPos.coords.longitude, pos.coords.latitude, pos.coords.longitude);
+        document.querySelector("#distance").textContent = calculateDistance(startPos.coords.latitude, startPos.coords.longitude, pos.coords.latitude, pos.coords.longitude);
     })
 }
 
