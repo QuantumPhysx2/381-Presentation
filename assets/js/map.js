@@ -136,8 +136,11 @@ window.setInterval(function() {
     seconds++;
     timer.textContent = hours + ":" + minutes + ":" + seconds;
 
+    // Checking if seconds exceeds 60 seconds
     if (seconds >= 60) {
+        // Append by +1
         minutes++;
+        // Round off value to nearest whole number divided by 60 (seconds)
         seconds = Math.floor(seconds / 60);
     }
 
