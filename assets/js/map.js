@@ -73,15 +73,16 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
+    // Radius of Earth in km
     var R = 6371;
-    // Convert lat and lon diff to rad
+    // Convert lat and lon diff to radians
     var dLat = (lat2 - lat1).toRad();
     var dLon = (lon2 - lon1).toRad();
     
     var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var distance = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    var dist = R * c;
+    var dist = R * distance;
     return dist;
 }
 
