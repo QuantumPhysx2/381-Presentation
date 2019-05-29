@@ -17,17 +17,20 @@ function initMap() {
         map: map,
         title: "Your position"
     })
-
+    
+    // Create our Google Map
     infoWindow = new google.maps.InfoWindow;
 
-    // try HTML5 geolocation
+    // try HTML5 geolocation (if Browser supports Geolocation API)
     if (navigator.geolocation) {
+        // Setting the position of the map marker
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
+            
+            // Map marker properties
             infoWindow.setPosition(pos);
             infoWindow.setContent("You are here");
 
@@ -39,11 +42,14 @@ function initMap() {
             marker.setPosition(pos);
 
         }, function() {
+            // Set the map marker to the set position if failed
+            // E.g. GPS not turned on | didn't allow location services
             handleLocationError(true, infoWindow, map.getCenter());
         })
 
         // Automatically call this function on device location change
         navigator.geolocation.watchPosition(function(position) {
+            // Updates the marker based on current position
             setMarkerPosition(marker, position);
         })
     } else {
